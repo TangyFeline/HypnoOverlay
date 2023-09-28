@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/libgif/libgif.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gif.js/dist/gif.js"></script>
+    <script src="anim.js"></script>    
+    <script src="presets.js"></script>    
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="anim.css">
+    <title>Overlay</title>
+</head>
+<body onload="onLoad();">
+    <section class="container">
+        <div class="fileContainer">
+            <p>Select an image from your files.</p>
+            <input type="file" id="fileBackground" onchange="handleFileUpload(this)"/>
+            <img class="hidden" id="background" />
+            
+        </div>
+        <div class="fileContainer">
+            <img class="hidden" id="placeholder" />
+            <p>Select a spiral from your files.</p>
+            <input type="file" id="fileOverlay" onchange="handleFileUpload(this)" accept="image/gif"/>
+        </div>
+    </section>
+    <section class="secondStep hidden">
+        <div class="workingContainer">
+            <div class="loadingSign"></div>            
+            <div class="canvasContainer">
+                <canvas id="working" class="hidden"></canvas>
+                <div class="downloadRow">
+                    <button class="hidden" onClick="saveGif()">Download</button>
+                </div>
+
+            </div>
+        </div>
+        
+        <div class="controls squished">
+            <div class="sliders">
+                <div class="row">
+                    <label for="opacitySlider">Opacity:</label>
+                    <input id="opacitySlider" type="range" min="0" max="100" id="opacity" value="60">
+                </div>
+                <div class="row">
+                    <label for="Speed">Speed: </label>
+                    <input id="speedSlider" type="range" min="0" max="120" id="opacity" value="70">
+                </div>
+            </div>            
+            <div id="textInputs">
+                <div class="textInputContainer">
+                    <div id="presets"></div>
+                    <button id="addInput">+</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="download" class="hidden">
+        <div class="loadingSign"></div>
+        <img src="" id="preview">
+    </section>
+    
+    <svg id="refTrash" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash3-fill" viewBox="0 0 16 16">
+        <path d="M11 1.5v1h3.5a.5.5 0 0 1 0 1h-.538l-.853 10.66A2 2 0 0 1 11.115 16h-6.23a2 2 0 0 1-1.994-1.84L2.038 3.5H1.5a.5.5 0 0 1 0-1H5v-1A1.5 1.5 0 0 1 6.5 0h3A1.5 1.5 0 0 1 11 1.5Zm-5 0v1h4v-1a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5ZM4.5 5.029l.5 8.5a.5.5 0 1 0 .998-.06l-.5-8.5a.5.5 0 1 0-.998.06Zm6.53-.528a.5.5 0 0 0-.528.47l-.5 8.5a.5.5 0 0 0 .998.058l.5-8.5a.5.5 0 0 0-.47-.528ZM8 4.5a.5.5 0 0 0-.5.5v8.5a.5.5 0 0 0 1 0V5a.5.5 0 0 0-.5-.5Z"/>
+      </svg>
+
+</body>
+</html>

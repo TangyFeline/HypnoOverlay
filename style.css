@@ -1,0 +1,227 @@
+canvas{
+    display:inline-block;
+}
+body{
+    overflow-x:hidden;
+}
+.container
+{
+    display:flex;        
+}
+.hidden
+{
+    display:none !important;
+}
+.container .fileContainer
+{
+    width:47%;
+    border:2px dashed rgb(173, 173, 173);
+    margin-left:15px;
+    position:relative;
+    border-radius:1em;
+    cursor:pointer;
+    overflow:hidden;
+}
+.container .fileContainer:hover{
+    background:rgb(245, 245, 245);
+}
+.container .fileContainer .jsgif
+{
+    position:absolute;
+    width:100%;
+    top:50%;
+    transform: translateY(-50%);
+    z-index:5;
+    text-align:center;
+}
+.container .fileContainer p{
+    position:absolute;
+    left:50%;
+    top:50%;
+    width:100%;
+    text-align:center;
+    transform:translate(-50%,-50%);
+    font-family:Helvetica;
+    font-size:1.2em;
+    color: #888;
+    pointer-events:none;
+}
+.container .fileContainer input{
+    display:none;
+}
+.fileContainer img{
+    position:absolute;
+    width:100%;
+    top:50%;
+    transform:translateY(-50%);
+    pointer-events:none;
+    z-index:5;
+}
+section{
+    padding:1vh;
+    height:94vh;
+    width:97vw;
+    display:flex;
+    justify-content: center;
+}
+.secondStep{
+    justify-content: center;    
+    margin:auto;
+    padding:0;
+}
+.secondStep canvas
+{
+    display:inline-block;
+    width:100%;
+    max-width:500px;
+}
+.workingContainer
+{
+    position:relative;
+    height:100%;
+    padding-top:5vh;
+    min-width:50%;
+    text-align:right;
+}
+.controls.expand{
+    padding:15px;
+}
+.squished
+{
+    overflow:hidden;
+    width:0;
+}
+.expand{
+    animation-name: expand;
+    animation-delay:0;
+    animation-duration:1s;
+    animation-fill-mode: forwards;
+    animation-timing-function: linear;
+}
+@keyframes expand
+{
+    0%
+    {
+        width:0;
+    }
+    100%
+    {
+        width:100%;
+    }
+}
+.controls .sliders
+{
+    width:60%;
+    padding:5px;
+    border: 1px dashed rgb(173, 173, 173);
+    border-radius:10px;
+    margin-bottom:1em;
+    margin-top:1em;
+}
+.controls .row
+{
+    width:100%;
+}
+.controls #addInput{    
+    margin-top:10px;
+    background: none;
+    border: 2px dashed #AAA;
+    color: #AAA;
+    padding: 0 4px;
+    font-size: 1.4em;
+    line-height: 1.1em;
+    font-family: Helvetica;
+    outline: none;
+    cursor:pointer;
+}
+.controls button:hover{    
+    color:#bbb;
+    border-color:#bbb;
+    transition:padding;
+}
+.controls #textInputs{    
+    padding:5px;        
+}
+.controls #textInputs .textInputContainer
+{
+    border-radius:10px;
+    padding:5px;
+    border: 1px dashed rgb(173, 173, 173);
+    text-align:center;
+    display:inline-block;
+    min-width:60%;
+}
+label{
+    font-family:Helvetica;
+    font-size:1em;
+    line-height:1em;
+}
+.downloadRow
+{
+    width:100%;
+    text-align:center;
+}
+.canvasContainer
+{
+    text-align:center;
+    display:inline-block;
+}
+.downloadRow button{
+    outline: none;
+    background: none;
+    border: 1px solid #cfcfcf;
+    font-size: 1.3em;
+    padding: 10px 24px;
+    color: #444;
+    margin-top: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.downloadRow button:hover{
+    box-shadow: 0px 7px 19px 0px #ddd;
+}
+.inputRow{
+    height:1.5em;
+    margin-bottom:0.2em;
+    display:flex;
+    align-items: center;;
+}
+.inputRow input
+{
+    display:inline-block;
+    height:100%;
+}
+input[type="color"]{
+    padding:0;
+}
+.trash{
+    cursor:pointer;
+}
+.trash:hover{
+    color:red;
+}
+#refTrash
+{
+    display:none;
+}
+#download
+{
+    position:relative;
+}
+#presets
+{
+    margin:10px;
+}
+#presets button{
+    border:2px solid #444;
+    cursor:pointer;
+    color:#444;
+    padding:5px 10px;
+    font-size:1.2em;
+    margin:5px;
+    border-radius:5px;
+}
+#presets button.active{
+    background: #444;
+    color:white;
+}
